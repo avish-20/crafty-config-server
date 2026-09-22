@@ -1,0 +1,16 @@
+server:
+  port: 9050
+  servlet.context-path: /account
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:9010/craftly-account-db
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+stripe:
+  api:
+    secret: sk_test_51TVSCoRqz90IauODCp5tT6VbMsUkXGAkDVoWkDy2UlNzETkBIT6aw4cxnytaM1cF6G1OnsCQJOTV1AOnbvtXaQYa00gVMoVBqK
+  webhook:
+    secret: whsec_54c36a35805295e78b8da3a6301c6b46e430e4b9c6a00d106d1f33cd7f0b7430
