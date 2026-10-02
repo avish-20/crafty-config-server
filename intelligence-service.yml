@@ -11,7 +11,7 @@ spring:
 
   ai:
     openai:
-      api-key: abc
+      api-key: sk-proj--PMuDA3uRp6pp3LuX-xvoCC4A
       chat:
         options:
           model: gpt-4
