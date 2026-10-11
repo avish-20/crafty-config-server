@@ -22,7 +22,12 @@ eureka:
 
 jwt.secretKey: asfd9asfdaoijfalkjl23u4oi5jlkjf98790890890ugojvakglsdfjn8yuh
 
+
 app:
   frontend:
     url: http://localhost:8080/frontend
+  preview:
+    domain: ${PREVIEW_DOMAIN}
+    namespace: ${PREVIEW_NAMESPACE}
+    proxy-port: ${PROXY_PORT}
   
