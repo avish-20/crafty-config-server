@@ -1,3 +1,60 @@
+# server:
+#   port: 9030
+#   servlet.context-path: /intelligence
+
+# spring:
+#   datasource:
+#     url: jdbc:postgresql://localhost:9010/craftly-intelligence-db
+#     username: user
+#     password: password
+#     driver-class-name: org.postgresql.Driver
+
+#   ai:
+#     openai:
+#       api-key: sk-proj--PMuDA3uRp6pp3LuX-xvoCC4A
+#       chat:
+#         options:
+#           model: gpt-4
+#           temperature: 0.0
+
+# ---
+# spring:
+#   config:
+#     activate:
+#       on-profile: k8s
+#   datasource:
+#     url: jdbc:postgresql://pgvector.craftly-core.svc.cluster.local:5432/intelligence_db
+#     username: intelligence_user
+#     password: ${DB_PASSWORD}
+
+# ai:
+#     openai:
+#       api-key: ${AI_API_KEY}
+#     chat:
+#         options:
+#           model: gpt-4
+
+# ---
+
+# spring:
+#   config:
+#     activate:
+#       on-profile: k8s
+#   datasource:
+#     url: jdbc:postgresql://pgvector.craftly-core.svc.cluster.local:5432/intelligence_db
+#     username: workspace_user
+#     password: ${DB_PASSWORD}
+#   data:
+#     redis:
+#       host: redis.craftly-core.svc.cluster.local
+#       port: 6379
+
+# minio:
+#   url: http://minio.craftly-core.svc.cluster.local:9000
+#   access-key: ${MINIO_ROOT_USER}
+#   secret-key: ${MINIO_ROOT_PASSWORD}
+#   project-bucket: projects
+
 server:
   port: 9030
   servlet.context-path: /intelligence
@@ -11,7 +68,7 @@ spring:
 
   ai:
     openai:
-      api-key: sk-proj--PMuDA3uRp6pp3LuX-xvoCC4A
+      api-key: ${AI_API_KEY}
       chat:
         options:
           model: gpt-4
@@ -27,10 +84,10 @@ spring:
     username: intelligence_user
     password: ${DB_PASSWORD}
 
-ai:
+  ai:
     openai:
       api-key: ${AI_API_KEY}
-    chat:
+      chat:
         options:
           model: gpt-4
 
@@ -40,10 +97,6 @@ spring:
   config:
     activate:
       on-profile: k8s
-  datasource:
-    url: jdbc:postgresql://pgvector.craftly-core.svc.cluster.local:5432/intelligence_db
-    username: workspace_user
-    password: ${DB_PASSWORD}
   data:
     redis:
       host: redis.craftly-core.svc.cluster.local
