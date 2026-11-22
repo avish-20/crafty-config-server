@@ -38,5 +38,8 @@ jwt.secretKey: asfd9asfdaoijfalkjl23u4oi5jlkjf98790890890ugojvakglsdfjn8yuh
 
 app:
   frontend:
-    url: http://localhost:8080/frontend
-  
+    url: http://localhost:5173/frontend
+  preview:
+    domain: localhost
+    namespace: craftly-dev
+    proxy-port: 8090 
