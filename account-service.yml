@@ -14,3 +14,21 @@ stripe:
     secret: sk_test_51TVSCoRqz90IauODCp5tT6VbMsUkXGAkDVoWkDy2UlNzETkBIT6aw4cxnytaM1cF6G1OnsCQJOTV1AOnbvtXaQYa00gVMoVBqK
   webhook:
     secret: whsec_54c36a35805295e78b8da3a6301c6b46e430e4b9c6a00d106d1f33cd7f0b7430
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: k8s
+  datasource:
+    url: jdbc:postgresql://pgvector.craftly-core.svc.cluster.local:5432/account_db
+    username: account_user
+    password: ${DB_PASSWORD}
+
+
+stripe:
+  api:
+    secret: ${STRIPE_API_KEY}
+  webhook:
+    secret: ${STRIPE_WEBHOOK_SECRET}
