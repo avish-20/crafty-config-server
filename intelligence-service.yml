@@ -18,7 +18,6 @@ spring:
           temperature: 0.0
 
 ---
-
 spring:
   config:
     activate:
@@ -42,7 +41,7 @@ spring:
     activate:
       on-profile: k8s
   datasource:
-    url: jdbc:postgresql://pgvector.craftly-core.svc.cluster.local:5432/workspace_db
+    url: jdbc:postgresql://pgvector.craftly-core.svc.cluster.local:5432/intelligence_db
     username: workspace_user
     password: ${DB_PASSWORD}
   data:
